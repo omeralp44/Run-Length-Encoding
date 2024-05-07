@@ -1,0 +1,33 @@
+fun StringChallenge(str: String): String {
+
+  // code goes here
+  
+  var printing = ""
+  var store = str.get(0)
+  var count = 0
+  for(i in 0..(str.length-1))
+  {
+    var char = str.get(i)
+    
+    if(store == char)
+    {
+    	store = char
+        count = count + 1
+    }
+    else
+    {
+        printing = printing + count.toString() + store
+        count = 1
+        store = str.get(i) 
+       
+    }
+  
+  }
+  printing = printing + count.toString() + store
+  return printing;
+  
+}
+
+fun main() {
+  println(StringChallenge(readLine()))
+}
